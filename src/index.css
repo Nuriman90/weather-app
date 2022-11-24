@@ -22,6 +22,11 @@ h1 {
   font-size: 6rem;
 }
 
+h2 {
+  font-family: 'Courier New', Courier, monospace;
+  color: sandybrown;
+}
+
 .app {
   width: 100vw;
   height: 100vh;
@@ -97,3 +102,20 @@ h1 {
 .bold {
   font-weight: 700;
 }
+
+.clock{
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  text-align: center;
+}
+
+.clock h2{
+  border: 2px solid white;
+  width: 200px;
+  border-radius: 15px;
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+

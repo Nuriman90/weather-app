@@ -4,6 +4,14 @@ import axios from 'axios';
 const App = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState('');
+  const time = new Date().toLocaleTimeString();
+  const [currentTime, setCurrentTime] = useState(time);
+
+  const updateTime = () => {
+    let time = new Date().toLocaleTimeString();
+    setCurrentTime(time);
+  }
+  setInterval(updateTime, 1000);
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=f54f0e11e97de91f07e6530f51ff30e7`
 
@@ -38,6 +46,9 @@ const App = () => {
           </div>
           <div className='temp'>
             {data.main ? <h1>{data.main.temp.toFixed()}°F</h1> : null}
+          </div>
+          <div className='clock'>
+            <h2>{currentTime}</h2>
           </div>
           <div className='description'>
             {data.weather ? <p>{data.weather[0].main}</p> : null}
